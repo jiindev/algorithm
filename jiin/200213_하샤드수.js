@@ -1,5 +1,4 @@
 function solution(x) { //10,12,11,13
-    let result;
     let num = String(x);
     let plus = 0;
     for(let i=0; i<num.length; i++){
