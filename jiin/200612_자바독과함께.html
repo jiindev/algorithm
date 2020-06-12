@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <script>
+    const stones = [1, 2, 1, 4];
+    const docs = [{
+        name : "루비독",
+        age : "95년생",
+        jump : 3,
+        size : 4
+        },{
+        name : "피치독",
+        age : "95년생",
+        jump : 3,
+        size : 3
+        },{
+        name : "씨-독",
+        age : "72년생",
+        jump : 2,
+        size : 1
+        },{
+        name : "코볼독",
+        age : "59년생",
+        jump : 1,
+        size : 1
+        },
+    ];
+
+    const checkDocs = (stones, docs) => {
+        let survivor = [];
+        for(let doc of docs){
+            let fail = false;
+            for(let i=doc.jump-1; i<stones.length; i = i + doc.jump){
+                stones[i] = stones[i] - doc.size;
+                if(stones[i]<0){
+                    fail = true;
+                    break;
+                }
+            }
+            if(!fail) survivor.push(doc.name);
+        }
+        return survivor;
+    }
+    console.log(checkDocs(stones, docs));
+    </script>
+</body>
+</html>
