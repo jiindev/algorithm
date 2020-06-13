@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <script>
+        const f1 = (n) => {
+            let result = [];
+            while(true){
+                n = Math.floor(n/2);
+                result.push(n%2);
+                if(n===1||n===0){
+                    result.push(n);
+                    break;
+                }
+            }
+            return result.reverse().join('');
+        }
+
+        const f2 = (n) => {
+            let result = '';
+            while(true){
+                if(n%2===0){
+                    result += '0'; //result = '0' + result;
+                }else result += '1'; //result = '1' + result;
+                n = Math.floor(n/2);
+                if(n===1 || n===0){
+                    result += String(n);
+                    break;
+                }
+            }
+            return result.split('').reverse().join('');
+        }
+
+        console.log(f1(114), parseInt(1110010, 2));
+        console.log(f2(114));
+
+        const f3 = (n)=>{
+            if(n===1 || n===0){
+                return String(n);
+            }
+            return f3(Math.floor(n/2))+String(n%2);
+        }
+        console.log(f3(114));
+        
+    </script>
+</body>
+</html>
