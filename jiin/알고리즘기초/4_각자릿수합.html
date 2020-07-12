@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <script>
+        const common = (num) => {
+            let numArr = (''+num).split('');
+            let result = 0;
+            for(let n of numArr){
+                result+=parseInt(n, 10);
+            }
+            return result;
+        }
+        console.log(common(123123));
+
+        const recursion = (num) => {
+            if(num<10){
+                return parseInt(num, 10);
+            }
+            return parseInt(num[num.length-1], 10) + recursion(num.slice(0, num.length-1));
+        }
+
+        console.log(recursion('123123'));
+    </script>
+</body>
+</html>

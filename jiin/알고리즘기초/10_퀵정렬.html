@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <script>
+        let a = [10, 11, 9, 2, 4, 3, 6, 5];
+
+        const quick = (array) => {
+            let arrayLength = array.length;
+
+            if(arrayLength<=1){
+                return array;
+            }
+            let pivot = [array.shift()];
+            let group1 = [];
+            let group2 = [];
+
+            for(let i in array){
+                if(array[i]<pivot){
+                    group1.push(array[i]);
+                }else group2.push(array[i]);
+            }
+            
+            return quick(group1).concat(pivot, quick(group2));
+
+        }
+        console.log(quick(a));
+
+    </script>
+</body>
+</html>

@@ -25,14 +25,39 @@
             if(문자.length === 1){
                 return 문자;
             }
-            let x = 문자.split('');
-            let y = x.pop();
-            x = x.join();
-
-            return 문자열뒤집기재귀함수(문자, i) + 문자[i];
+            return 문자[문자.length-1] + 문자열뒤집기재귀함수(문자.slice(0,문자.length-1));
         }
-        console.log(문자열뒤집기재귀함수('호호호안녕', -1));
+        console.log(문자열뒤집기재귀함수('호호호안녕'));
         
+
+        const common = (문자) => {
+            if(문자.length===1){
+                return 문자;
+            }
+            let result = '';
+            while(true){
+                let 문자복사 = 문자.split('');
+                result += 문자복사.pop();
+                문자 = 문자복사.join('');
+                if(문자.length<1){
+                    break;
+                }
+            }
+            return result;
+        }
+
+        console.log(common('ㅎㅎㅎ안녕'));
+
+        const recursion = (문자) => {
+            if(문자.length === 1){
+                return 문자;
+            }
+            return 문자[문자.length-1] + recursion(문자.slice(0, 문자.length-1));
+        };
+
+        console.log(recursion('안녕하세용'));
+
+
     </script>
 </body>
 </html>

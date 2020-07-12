@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> </head>
+  <body>
+    <script>
+      const getNumber = (A, B, K) => {
+        let S = [];
+        let num1 = A < B ? A : B;
+        let num2 = A < B ? B : A;
+
+        let i = 1;
+        while (true) {
+          if (i % num1 === 0 || i % num2 === 0) {
+            S.push(i);
+          }
+          if (S.length === K) {
+            break;
+          }
+          i++;
+        }
+
+        return S[K - 1];
+      };
+
+      console.log(getNumber(6, 8, 8));
+    </script>
+  </body>
+</html>

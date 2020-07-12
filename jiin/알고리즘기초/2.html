@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> </head>
+  <body>
+    <script>
+      const getSuperbNumber = (K) => {
+        let num = 1;
+        let superbNumbers = [];
+        while (true) {
+          let numString = num + "";
+          let isSuperb = true;
+          for (let i = 1; i < numString.length; i++) {
+            let beforeNum = parseInt(numString[i - 1], 10);
+            let currentNum = parseInt(numString[i], 10);
+            if (Math.abs(beforeNum - currentNum) !== 1) {
+              isSuperb = false;
+              break;
+            }
+          }
+          if (isSuperb) {
+            superbNumbers.push(num);
+          }
+          if (superbNumbers.length === K) {
+            break;
+          }
+          num++;
+        }
+        return superbNumbers[K - 1];
+      };
+
+      console.log(getSuperbNumber(1));
+      console.log(getSuperbNumber(100));
+    </script>
+  </body>
+</html>

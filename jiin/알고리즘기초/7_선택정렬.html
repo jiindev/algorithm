@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <script>
+        let a = [10, 11, 9, 2, 4, 3, 6, 5];
+        let result = [];
+        let length = a.length;
+        // for(let i=0; i<length; i++){
+        //     let min = Math.min.apply(null, a);
+        //     a.splice(a.indexOf(min),1);
+        //     result.push(min);
+        // }
+        while(a.length>0){
+            let min = Math.min.apply(null, a);
+            a.splice(a.indexOf(min),1);
+            result.push(min);
+        }
+        console.log(result);
+    </script>
+</body>
+</html>

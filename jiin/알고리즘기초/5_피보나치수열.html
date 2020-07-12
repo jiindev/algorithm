@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <script>
+        const common = (a, b, num) => {
+            for(let i=0; i<num; i++){
+                let c = a+b;
+                a = b;
+                b = c;
+            }
+            return b;
+        }
+
+        console.log(common(1,1,5));
+
+        const recursion = (a, b, num) => {
+            if(num === 0){
+                return 1;
+            }
+            num --;
+            return a + recursion(b, a+b, num);
+        }
+        console.log(recursion(1, 1, 5));
+
+        const recursion = (num) => {
+            if(num===1 || num===0){
+                return 1;
+            }
+            return recursion(num-1) + recursion(num-2);
+        }
+    </script>
+</body>
+</html>

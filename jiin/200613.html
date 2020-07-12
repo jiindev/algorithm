@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <script>
+        
+        const dateCheck = (peopleNum) => {
+            const startDate = new Date('2020-01-01T00:00:00');
+            const datePerMonth = [1024, 512, 245, 128, 64, 32, 16, 8, 4, 2]
+            console.log(peopleNum/(25*17 + 5*17*10)); //하루에 탈 수 있는 인원
+
+            while(datePerMonth[i]>peopleNum){
+                peopleNum/datePerMonth[i]
+            }
+        }
+        dateCheck(14000605);
+    </script>
+</body>
+</html>

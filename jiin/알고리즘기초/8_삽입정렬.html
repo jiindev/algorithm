@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <script>
+        let a = [10, 11, 9, 2, 4, 3, 6, 5];
+        a.sort((a,b)=>a-b);
+        let length = a.length;
+        let result = [];
+        const checkIndex = (array, num) => {
+            // let index = 0;
+            // for(let i=0; i<array.length; i++){
+            //     if (array[i]<num){
+            //         index = i+1;
+            //     }else break;
+            // }
+            for(let i in array){
+                if(array[i]>num){
+                    return num;
+                }
+            }
+            return array.length;
+        }
+
+        for(let i=0; i<length; i++){
+            let insertNum = a.shift();
+            let index = checkIndex(result, insertNum);
+            result.splice(index, 0, insertNum);
+        }
+
+        console.log(result);
+
+    </script>
+</body>
+</html>

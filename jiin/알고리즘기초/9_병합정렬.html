@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <script>
+        let a = [10, 11, 9, 2, 4, 3, 6, 5];
+
+        // const recursion = (array) => {
+        //     let arrayLength = array.length;
+        //     if(arrayLength <= 1){
+        //         return array;
+        //     }
+        //     let mid = parseInt(arrayLength/2);
+        //     let array1 = recursion(array.slice(0, mid));
+        //     let array2 = recursion(array.slice(mid));
+        //     return `array1 : ${array1},  array2 : ${array2}\n`;
+        // }
+        // console.log(recursion(a));
+
+        const recursion = (array) => {
+            let arrayLength = array.length;
+            let result = [];
+            if(arrayLength <= 1){
+                return array;
+            }
+            let mid = parseInt(arrayLength/2);
+            let array1 = recursion(array.slice(0, mid));
+            let array2 = recursion(array.slice(mid));
+
+            while(array1.length!==0 && array2.length!==0){
+                if(array1[0] < array2[0]){
+                    result.push(array1.shift());
+                }else{
+                    result.push(array2.shift());
+                }
+            }
+            while(array1.length!==0){
+                result.push(array1.shift());
+            }
+            while(array2.length!==0){
+                result.push(array2.shift());
+            }
+
+            return result;
+        }
+        console.log(recursion(a));
+
+
+    </script>
+</body>
+</html>
